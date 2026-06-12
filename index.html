@@ -9,6 +9,10 @@
     <link rel="canonical" href="https://www.ottimapasta.co.uk/">
     <meta name="theme-color" content="#d2382a">
 
+    <!-- Site icon: the Ottima Pasta crest, a fork resting in a nest of pasta -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23d2382a'/%3E%3Ccircle cx='32' cy='32' r='25' fill='none' stroke='%23fbf2e1' stroke-width='1.6' opacity='.5'/%3E%3Cpath d='M32 51V38' stroke='%23fbf2e1' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M24.5 13v7.4a7.5 7.5 0 0 0 15 0V13M32 12.4v9.6' stroke='%23fbf2e1' stroke-width='4.4' stroke-linecap='round' fill='none'/%3E%3Cpath d='M18.5 31c0-5.4 27-5.4 27 0M21.5 36.4c0-4.2 21-4.2 21 0' stroke='%23fbf2e1' stroke-width='3.6' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
+    <link rel="mask-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 2a30 30 0 1 0 0 60 30 30 0 0 0 0-60zm0 49a2.5 2.5 0 0 1-2.5-2.5V38a2.5 2.5 0 0 1 5 0v10.5A2.5 2.5 0 0 1 32 51z'/%3E%3C/svg%3E" color="#d2382a">
+
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Ottima Pasta">
@@ -16,6 +20,7 @@
     <meta property="og:title" content="Ottima Pasta | Handmade Italian, since 1935">
     <meta property="og:description" content="An all day Italian kitchen with ten restaurants across the UK. Handmade pasta, honest prices and a welcome that feels like home.">
     <meta property="og:image" content="https://www.ottimapasta.co.uk/social/ottima-pasta-social.jpg">
+    <meta property="og:image:alt" content="A painted Ottima Pasta shopfront with a bowl of handmade pasta in the window">
     <meta property="og:locale" content="en_GB">
 
     <!-- Twitter -->
@@ -27,33 +32,74 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600;0,6..96,700;0,6..96,800;1,6..96,500;1,6..96,600&family=Hanken+Grotesk:wght@400;500;600;700&family=Pinyon+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,700;1,6..96,600;1,6..96,700&family=Hanken+Grotesk:wght@400;600;700&family=Pinyon+Script&display=swap" rel="stylesheet">
 
     <!-- Structured data: Restaurant -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Restaurant",
+      "@id": "https://www.ottimapasta.co.uk/#restaurant",
       "name": "Ottima Pasta",
       "description": "An all day Italian kitchen with ten restaurants across the UK. Handmade pasta, fresh seasonal ingredients and honest prices.",
       "url": "https://www.ottimapasta.co.uk/",
       "logo": "https://www.ottimapasta.co.uk/ottima-pasta-logo.png",
       "image": "https://www.ottimapasta.co.uk/social/ottima-pasta-social.jpg",
+      "telephone": "+44 20 7946 0935",
+      "email": "ciao@ottimapasta.co.uk",
       "servesCuisine": "Italian",
       "priceRange": "££",
       "foundingDate": "1935",
       "acceptsReservations": "True",
       "areaServed": "United Kingdom",
+      "hasMenu": "https://www.ottimapasta.co.uk/food-and-drink.html",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "London",
         "addressCountry": "GB"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "11:00",
+        "closes": "22:30"
+      },
+      "potentialAction": {
+        "@type": "ReserveAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.ottimapasta.co.uk/#book",
+          "actionPlatform": [
+            "https://schema.org/DesktopWebPlatform",
+            "https://schema.org/MobileWebPlatform"
+          ]
+        },
+        "result": {
+          "@type": "Reservation",
+          "name": "Table reservation"
+        }
       },
       "sameAs": [
         "https://www.instagram.com/ottimapasta",
         "https://www.facebook.com/ottimapasta",
         "https://www.tiktok.com/@ottimapasta"
       ]
+    }
+    </script>
+
+    <!-- Structured data: WebPage with speakable answers -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://www.ottimapasta.co.uk/#webpage",
+      "url": "https://www.ottimapasta.co.uk/",
+      "name": "Ottima Pasta | Handmade Italian Restaurants Across the UK",
+      "about": { "@id": "https://www.ottimapasta.co.uk/#restaurant" },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".hero h1", ".hero .lead"]
+      }
     }
     </script>
 
@@ -107,6 +153,8 @@
             --wine: #7a241a;
             --gold: #d49a35;
             --gold-deep: #a9781f;
+            --basil: #3a6b4a;
+            --basil-deep: #2c5238;
             --board: #241710;
 
             --line: rgba(42, 28, 18, 0.14);
@@ -145,11 +193,23 @@
             position: relative;
         }
 
+        /* Painted paper grain over the whole page */
+        body::after {
+            content: '';
+            position: fixed; inset: 0; z-index: 2000;
+            pointer-events: none;
+            opacity: 0.035;
+            mix-blend-mode: multiply;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220' viewBox='0 0 220 220'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23g)' opacity='0.55'/%3E%3C/svg%3E");
+            background-size: 220px 220px;
+        }
+
         img { max-width: 100%; display: block; }
         a { color: inherit; text-decoration: none; }
         button { font-family: inherit; cursor: pointer; border: none; background: none; }
         ul { list-style: none; }
 
+        ::selection { background: var(--red); color: #fff8ec; }
         :focus-visible { outline: 3px solid var(--gold-deep); outline-offset: 3px; border-radius: 4px; }
 
         .wrap { width: 100%; max-width: var(--wrap); margin: 0 auto; padding: 0 20px; }
@@ -157,10 +217,16 @@
         .skip {
             position: absolute; left: 12px; top: -60px;
             background: var(--ink); color: var(--cream);
-            padding: 10px 16px; border-radius: 8px; z-index: 2000;
+            padding: 10px 16px; border-radius: 8px; z-index: 2100;
             transition: top 0.2s ease;
         }
         .skip:focus { top: 12px; }
+
+        .sr-only {
+            position: absolute; width: 1px; height: 1px;
+            padding: 0; margin: -1px; overflow: hidden;
+            clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+        }
 
         /* ===================== TYPE ===================== */
         h1, h2, h3 { font-family: var(--display); font-weight: 700; line-height: 1.06; color: var(--ink); }
@@ -176,6 +242,16 @@
         .eyebrow.solo::after { display: none; }
         .lead { font-size: 1.1rem; color: var(--ink-2); }
 
+        /* Sign painter flourish under section headings */
+        .section-head h2::after {
+            content: '';
+            display: block;
+            width: 132px; height: 14px;
+            margin-top: 12px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 132 14' fill='none'%3E%3Cpath d='M3 7c20-6 36 6 56 0M73 7c20-6 36 6 56 0' stroke='%23d49a35' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M66 2l4.5 5-4.5 5-4.5-5z' fill='%23d49a35'/%3E%3C/svg%3E") no-repeat center / contain;
+        }
+        .section-head.center h2::after { margin-left: auto; margin-right: auto; }
+
         /* ===================== BUTTONS ===================== */
         .btn {
             display: inline-flex; align-items: center; justify-content: center; gap: 9px;
@@ -184,6 +260,7 @@
             transition: transform 0.18s ease, background 0.18s ease, box-shadow 0.18s ease, color 0.18s ease, border-color 0.18s ease;
             text-align: center; min-height: 52px; white-space: nowrap;
         }
+        .btn:active { transform: translateY(0) scale(0.97); }
         .btn svg { width: 18px; height: 18px; }
         .btn-primary { background: var(--red); color: #fff; box-shadow: var(--shadow-sm); }
         .btn-primary:hover { background: var(--red-deep); transform: translateY(-2px); box-shadow: var(--shadow-md); }
@@ -193,8 +270,6 @@
         .btn-ink:hover { background: #150d07; transform: translateY(-2px); box-shadow: var(--shadow-md); }
         .btn-ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--line); }
         .btn-ghost:hover { border-color: var(--ink); background: rgba(42,28,18,0.04); transform: translateY(-2px); }
-        .btn-outline-light { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.55); }
-        .btn-outline-light:hover { border-color: #fff; background: rgba(255,255,255,0.12); transform: translateY(-2px); }
         .btn-block { width: 100%; }
 
         .text-link {
@@ -226,7 +301,7 @@
         }
 
         /* ===================== ANNOUNCEMENT ===================== */
-        .topbar { background: var(--ink); color: #f3e7d2; font-size: 0.84rem; font-weight: 500; }
+        .topbar { background: var(--ink); color: #f3e7d2; font-size: 0.84rem; font-weight: 400; }
         .topbar .wrap { display: flex; align-items: center; justify-content: center; gap: 12px; min-height: 40px; padding: 6px 44px 6px 20px; position: relative; text-align: center; }
         .topbar a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; font-weight: 700; }
         .topbar-close { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: #f3e7d2; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; opacity: 0.8; }
@@ -239,8 +314,8 @@
         .site-header.scrolled { box-shadow: var(--shadow-sm); }
         .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: var(--header-h); }
 
-        .logo { display: inline-flex; align-items: center; gap: 9px; color: var(--ink); }
-        .logo .crest { width: 34px; height: 34px; flex-shrink: 0; color: var(--red); }
+        .logo { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); }
+        .logo .crest { width: 38px; height: 38px; flex-shrink: 0; color: var(--red); }
         .logo .wordmark { font-family: var(--display); font-weight: 700; font-size: 1.32rem; letter-spacing: 0.02em; line-height: 1; }
         .logo .wordmark b { color: var(--red); font-weight: 700; }
 
@@ -292,11 +367,22 @@
         .hero-copy .lead { color: var(--ink-2); font-size: 1.1rem; max-width: 34ch; margin-bottom: 26px; }
         .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; }
         .hero-note { margin-top: 18px; font-size: 0.9rem; color: var(--ink-2); display: flex; align-items: center; gap: 8px; }
-        .hero-note svg { width: 17px; height: 17px; color: var(--red); flex-shrink: 0; }
+        .hero-note svg { width: 17px; height: 17px; color: var(--basil); flex-shrink: 0; }
 
         .hero-visual { position: relative; display: grid; place-items: center; }
-        .arch { width: min(320px, 78vw); height: auto; filter: drop-shadow(0 18px 36px rgba(40,16,6,0.4)); }
-        .hero-stamp { position: absolute; right: 4%; bottom: 6%; }
+        .arch { width: min(340px, 80vw); height: auto; filter: drop-shadow(0 18px 36px rgba(40,16,6,0.36)); }
+        .arch .arch-text { font-family: var(--display); font-weight: 700; font-size: 22px; letter-spacing: 0.3em; fill: var(--gold-deep); }
+        .hero-stamp { position: absolute; right: 2%; bottom: 4%; }
+
+        .steam { opacity: 0; }
+        @keyframes steamrise {
+            0%   { opacity: 0; transform: translateY(7px); }
+            35%  { opacity: 0.8; }
+            100% { opacity: 0; transform: translateY(-16px); }
+        }
+        .steam { animation: steamrise 3.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+        .steam.s2 { animation-delay: 1.1s; }
+        .steam.s3 { animation-delay: 2.2s; }
 
         .stamp {
             width: 104px; height: 104px; border-radius: 50%;
@@ -313,6 +399,7 @@
         .trust ul { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 16px; padding: 26px 0; }
         .trust li { display: flex; align-items: center; gap: 12px; font-size: 0.92rem; font-weight: 600; color: var(--ink); }
         .trust .ic { width: 42px; height: 42px; border-radius: 50%; background: var(--cream-2); display: grid; place-items: center; flex-shrink: 0; color: var(--red); }
+        .trust li:nth-child(even) .ic { color: var(--basil); }
         .trust .ic svg { width: 21px; height: 21px; }
 
         /* ===================== SECTION SHELL ===================== */
@@ -324,17 +411,24 @@
         .section-head.center .eyebrow { justify-content: center; }
         .section-head h2 { font-size: clamp(2rem, 6.5vw, 2.9rem); margin-bottom: 12px; }
         .section-head p { font-size: 1.04rem; color: var(--ink-2); }
+        .section-head h2 + p, .section-head h2 + .mb-sub { margin-top: 14px; }
 
         /* ===================== MENU BOARD ===================== */
         .menuboard { background: var(--board); color: #f4e7cf; position: relative; }
         .menuboard::before {
             content: ''; position: absolute; inset: 14px; border: 1.5px solid rgba(212,154,53,0.4); border-radius: 6px; pointer-events: none;
         }
+        .menuboard .corner { position: absolute; width: 22px; height: 22px; color: var(--gold); opacity: 0.85; }
+        .menuboard .corner svg { width: 100%; height: 100%; }
+        .menuboard .corner.tl { top: 7px; left: 7px; }
+        .menuboard .corner.tr { top: 7px; right: 7px; transform: rotate(90deg); }
+        .menuboard .corner.br { bottom: 7px; right: 7px; transform: rotate(180deg); }
+        .menuboard .corner.bl { bottom: 7px; left: 7px; transform: rotate(270deg); }
         .menuboard .wrap { position: relative; }
         .menuboard .eyebrow { color: var(--gold); }
         .menuboard .eyebrow::before, .menuboard .eyebrow::after { background: var(--gold); }
         .menuboard h2 { color: #fff; }
-        .menuboard .mb-sub { color: rgba(244,231,207,0.62); font-size: 1rem; }
+        .menuboard .mb-sub { color: rgba(244,231,207,0.68); font-size: 1rem; }
         .menu-cols { display: grid; gap: 30px; margin-top: 30px; }
         .menu-cat > h3 { font-family: var(--display); font-style: italic; font-weight: 600; font-size: 1.5rem; color: var(--gold); margin-bottom: 16px; }
         .menu-item { padding: 9px 0; }
@@ -342,7 +436,7 @@
         .menu-row .name { font-family: var(--display); font-weight: 600; font-size: 1.08rem; color: #fbf0d8; white-space: nowrap; }
         .menu-row .dots { flex: 1; border-bottom: 1.5px dotted rgba(244,231,207,0.32); transform: translateY(-5px); }
         .menu-row .price { font-family: var(--display); font-weight: 600; color: var(--gold); white-space: nowrap; }
-        .menu-item .desc { font-size: 0.86rem; color: rgba(244,231,207,0.55); margin-top: 1px; }
+        .menu-item .desc { font-size: 0.86rem; color: rgba(244,231,207,0.62); margin-top: 1px; }
         .menuboard .text-link { color: var(--gold); margin-top: 28px; }
         .menuboard .text-link:hover { border-color: var(--gold); }
 
@@ -353,7 +447,13 @@
             width: 100%; max-width: 380px; border-radius: var(--r-lg);
             background: var(--red); padding: 26px;
             border: 3px solid var(--gold); box-shadow: var(--shadow-md);
-            display: grid; place-items: center;
+            display: grid; place-items: center; position: relative;
+        }
+        .story-frame::before {
+            content: ''; position: absolute; top: -8px; left: 30px;
+            width: 44px; height: 22px; border-radius: 0 0 6px 6px;
+            background: linear-gradient(90deg, var(--basil) 0 33.4%, var(--paper) 33.4% 66.7%, var(--red-deep) 66.7%);
+            box-shadow: var(--shadow-sm);
         }
         .story-frame svg { width: 150px; height: 150px; color: #fff3e2; }
         .story-visual .stamp { position: absolute; right: -8px; bottom: -8px; }
@@ -379,6 +479,7 @@
         .offer { background: var(--paper); border-radius: var(--r-md); padding: 26px 22px 24px; border: 1px solid var(--line-2); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: 11px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
         .offer:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
         .offer .oic { width: 50px; height: 50px; border-radius: 12px; display: grid; place-items: center; background: var(--cream-2); color: var(--red); }
+        .offer:nth-child(2) .oic { color: var(--basil); }
         .offer .oic svg { width: 25px; height: 25px; }
         .offer h3 { font-size: 1.35rem; }
         .offer p { font-size: 0.95rem; color: var(--ink-2); flex: 1; }
@@ -390,14 +491,30 @@
         .booking .eyebrow { color: #ffd9a0; }
         .booking .eyebrow::before, .booking .eyebrow::after { background: #ffd9a0; }
         .booking h2 { color: #fff; font-size: clamp(2rem, 6.5vw, 2.8rem); margin-bottom: 10px; }
+        .booking .section-head h2::after {
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 132 14' fill='none'%3E%3Cpath d='M3 7c20-6 36 6 56 0M73 7c20-6 36 6 56 0' stroke='%23ffd9a0' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M66 2l4.5 5-4.5 5-4.5-5z' fill='%23ffd9a0'/%3E%3C/svg%3E") no-repeat center / contain;
+        }
         .booking p { color: rgba(255,245,233,0.88); margin-bottom: 24px; max-width: 48ch; }
-        .book-form { background: rgba(255,250,239,0.1); border: 1px solid rgba(255,250,239,0.25); border-radius: var(--r-lg); padding: 18px; display: grid; gap: 12px; }
+
+        /* The reservation ticket */
+        .ticket {
+            background: var(--paper); color: var(--ink);
+            border-radius: var(--r-md); box-shadow: var(--shadow-lg);
+            padding: 0 0 20px; position: relative;
+        }
+        .ticket-stripe { height: 10px; background: var(--awning); border-radius: var(--r-md) var(--r-md) 0 0; }
+        .ticket-script { font-family: var(--script); font-size: 1.6rem; color: var(--red); text-align: center; line-height: 1; padding: 14px 18px 0; }
+        .ticket-grid { display: grid; gap: 12px; padding: 12px 18px 0; position: relative; }
+        .ticket-grid::before {
+            content: ''; position: absolute; left: 18px; right: 18px; top: 2px;
+            border-top: 1.5px dashed rgba(169, 120, 31, 0.45);
+        }
         .field { display: flex; flex-direction: column; gap: 6px; }
-        .field label { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #ffd9a0; }
-        .field select, .field input { font-family: inherit; font-size: 0.98rem; color: var(--ink); background: var(--paper); border: 1px solid transparent; border-radius: 10px; padding: 13px 14px; min-height: 50px; width: 100%; }
+        .field label { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--wine); }
+        .field select, .field input { font-family: inherit; font-size: 0.98rem; color: var(--ink); background: #fffdf6; border: 1px solid var(--line); border-radius: 10px; padding: 13px 14px; min-height: 50px; width: 100%; }
         .field select:focus, .field input:focus { outline: 3px solid var(--gold); outline-offset: 1px; }
-        .book-form .btn { margin-top: 4px; }
-        .book-note { margin-top: 16px; font-size: 0.82rem; color: rgba(255,245,233,0.78); display: flex; align-items: center; gap: 8px; }
+        .ticket-grid .btn { margin-top: 4px; }
+        .book-note { margin-top: 16px; font-size: 0.84rem; color: rgba(255,245,233,0.82); display: flex; align-items: center; gap: 8px; }
         .book-note svg { width: 16px; height: 16px; flex-shrink: 0; }
 
         /* ===================== NEWSLETTER ===================== */
@@ -407,12 +524,12 @@
         .news .eyebrow::before, .news .eyebrow::after { background: var(--wine); }
         .news .script { color: var(--red); font-size: 2rem; display: block; line-height: 0.9; margin-bottom: 2px; }
         .news h2 { color: var(--ink); font-size: clamp(2rem, 6.5vw, 2.8rem); margin-bottom: 10px; }
-        .news p { color: rgba(42,28,18,0.78); max-width: 48ch; margin: 0 auto 24px; }
+        .news p { color: rgba(42,28,18,0.8); max-width: 48ch; margin: 0 auto 24px; }
         .news-form { display: flex; flex-direction: column; gap: 10px; max-width: 440px; margin: 0 auto; }
         .news-form input { font-family: inherit; font-size: 1rem; color: var(--ink); background: var(--paper); border: 1.5px solid rgba(42,28,18,0.18); border-radius: var(--r-pill); padding: 15px 22px; min-height: 52px; width: 100%; }
         .news-form input:focus { outline: 3px solid var(--ink); outline-offset: 2px; }
         .news-ok { font-weight: 700; color: var(--wine); min-height: 1.2em; }
-        .news-fine { margin-top: 14px; font-size: 0.8rem; color: rgba(42,28,18,0.62); }
+        .news-fine { margin-top: 14px; font-size: 0.8rem; color: rgba(42,28,18,0.78); }
         .news-fine a { color: var(--wine); text-decoration: underline; font-weight: 600; }
 
         /* ===================== LOCATIONS ===================== */
@@ -420,6 +537,7 @@
         .loc { display: flex; align-items: center; gap: 12px; background: var(--paper); border: 1px solid var(--line-2); border-radius: var(--r-sm); padding: 15px 18px; font-weight: 600; transition: border-color 0.18s ease, transform 0.18s ease; }
         .loc:hover { border-color: var(--red); transform: translateX(3px); }
         .loc svg { width: 19px; height: 19px; color: var(--red); flex-shrink: 0; }
+        .loc.flagship svg { color: var(--gold-deep); }
         .loc .flag { margin-left: auto; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold-deep); }
 
         /* ===================== FAQ ===================== */
@@ -439,7 +557,7 @@
         .footer-brand .logo { color: #f6ead4; }
         .footer-brand .logo .crest { color: #e8765f; }
         .footer-brand .logo .wordmark b { color: #e8765f; }
-        .footer-brand p { margin-top: 14px; font-size: 0.92rem; color: #ab9c88; max-width: 32ch; }
+        .footer-brand p { margin-top: 14px; font-size: 0.92rem; color: #b3a48f; max-width: 32ch; }
         .footer-social { display: flex; gap: 10px; margin-top: 18px; }
         .footer-social a { width: 42px; height: 42px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.16); display: grid; place-items: center; color: #d6c7b3; transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease; }
         .footer-social a:hover { background: var(--red); color: #fff; border-color: var(--red); }
@@ -448,7 +566,7 @@
         .footer-col ul { display: flex; flex-direction: column; gap: 11px; }
         .footer-col a { font-size: 0.93rem; color: #bdae9a; transition: color 0.18s ease; }
         .footer-col a:hover { color: #fff; }
-        .footer-bottom { margin-top: 38px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.12); display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center; font-size: 0.82rem; color: #978872; }
+        .footer-bottom { margin-top: 38px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.12); display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center; font-size: 0.82rem; color: #a99a85; }
 
         /* ===================== MODALS ===================== */
         .modal { position: fixed; inset: 0; z-index: 1500; display: grid; place-items: center; padding: 20px; background: rgba(30, 16, 8, 0.58); opacity: 0; pointer-events: none; transition: opacity 0.25s ease; }
@@ -465,6 +583,7 @@
         .modal .news-form { max-width: none; flex-direction: column; }
         .modal .news-form input { background: var(--paper); }
         .modal-fine { margin-top: 14px; font-size: 0.78rem; color: var(--ink-3); }
+        .modal-fine a { color: var(--red-deep); font-weight: 700; }
         .booking-summary { background: var(--paper); border: 1px solid var(--line); border-radius: var(--r-md); padding: 16px; margin-bottom: 18px; font-size: 0.94rem; color: var(--ink); }
         .booking-summary strong { font-family: var(--display); }
 
@@ -490,8 +609,8 @@
             .menu-cols { grid-template-columns: 1fr 1fr; gap: 26px 44px; }
             .offer-grid { grid-template-columns: repeat(3, 1fr); }
             .loc-grid { grid-template-columns: repeat(2, 1fr); }
-            .book-form { grid-template-columns: repeat(2, 1fr); }
-            .book-form .field-guests, .book-form .btn { grid-column: span 2; }
+            .ticket-grid { grid-template-columns: repeat(2, 1fr); }
+            .ticket-grid .field-guests, .ticket-grid .btn { grid-column: span 2; }
             .news-form { flex-direction: row; }
             .news-form input { flex: 1; }
             .news-form .btn { width: auto; }
@@ -506,22 +625,23 @@
             .hamburger { display: none; }
             .hero-grid { grid-template-columns: 1.05fr 0.95fr; align-items: center; gap: 50px; padding: 60px 0 68px; }
             .loc-grid { grid-template-columns: repeat(3, 1fr); }
-            .book-form { grid-template-columns: repeat(4, 1fr); }
-            .book-form .field-guests { grid-column: auto; }
-            .book-form .btn { grid-column: auto; align-self: end; }
+            .ticket-grid { grid-template-columns: repeat(4, 1fr); }
+            .ticket-grid .field-guests { grid-column: auto; }
+            .ticket-grid .btn { grid-column: auto; align-self: end; }
         }
 
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
             *, *::before, *::after { animation: none !important; transition: none !important; }
             .reveal { opacity: 1 !important; transform: none !important; }
+            .steam { opacity: 0.55; }
         }
     </style>
 </head>
 <body>
     <a class="skip" href="#main">Skip to content</a>
 
-    <!-- Announcement banner (editable in CMS) -->
+    <!-- Announcement banner (editable in the CMS) -->
     <div class="topbar" id="topbar">
         <div class="wrap">
             <span>Now taking bookings for Christmas at all ten restaurants. <a href="group-bookings.html">Plan your celebration</a></span>
@@ -535,7 +655,13 @@
     <header class="site-header" id="siteHeader">
         <div class="wrap header-inner">
             <a href="index.html" class="logo" aria-label="Ottima Pasta home">
-                <svg class="crest" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"/><path d="M20 9l2.6 6.6L29 16l-5 4.3 1.6 6.7L20 23.6 14.4 27 16 20.3 11 16l6.4-.4z" fill="currentColor"/></svg>
+                <svg class="crest" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                    <circle cx="20" cy="20" r="18.6" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="20" cy="20" r="15.4" stroke="currentColor" stroke-width="0.9" opacity="0.45"/>
+                    <path d="M20 31.5V23.5" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M15.4 8.8v4.6a4.6 4.6 0 0 0 9.2 0V8.8M20 8.4v6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+                    <path d="M11.8 19.4c0-3.3 16.4-3.3 16.4 0M13.7 22.7c0-2.6 12.6-2.6 12.6 0" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/>
+                </svg>
                 <span class="wordmark">Ottima <b>Pasta</b></span>
             </a>
 
@@ -614,17 +740,57 @@
                 </div>
 
                 <div class="hero-visual reveal" style="transition-delay:.12s">
-                    <svg class="arch" viewBox="0 0 320 360" role="img" aria-label="A painted shopfront window with a bowl of handmade pasta, a tomato and a basil sprig">
-                        <path d="M24 348V150a136 136 0 0 1 272 0v198Z" fill="#fff6ea" stroke="#d49a35" stroke-width="6"/>
-                        <path d="M24 348V150a136 136 0 0 1 272 0v198Z" fill="none" stroke="#b22e1f" stroke-width="2" stroke-dasharray="2 9" opacity="0.5"/>
-                        <ellipse cx="160" cy="266" rx="98" ry="20" fill="#eddcc0"/>
-                        <circle cx="160" cy="230" r="86" fill="#fffaef" stroke="#e7d6ba" stroke-width="3"/>
-                        <circle cx="160" cy="230" r="62" fill="#f6e7cb"/>
-                        <path d="M112 232c14-26 82-26 96 0M118 218c16-20 70-20 86 1M120 244c18 16 62 16 80-1" stroke="#d49a35" stroke-width="5" fill="none" stroke-linecap="round"/>
-                        <path d="M126 226c20-8 50-8 70 2M132 238c18-6 40-6 58 0" stroke="#c98a24" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.8"/>
-                        <circle cx="196" cy="246" r="16" fill="#d2382a"/>
-                        <path d="M196 232c2-6-2-9-2-9s6 1 6 7" fill="#3f6b4a"/>
-                        <path d="M118 250c-8-2-12 3-12 3s7 6 12 1" fill="#3f6b4a"/>
+                    <svg class="arch" viewBox="0 0 340 420" role="img" aria-label="A hand painted shopfront window. Gold lettering reads pasta fresca above a steaming bowl of handmade pasta, a fork lifting a twirl, a tomato and a sprig of basil">
+                        <!-- Window glass and frame -->
+                        <path d="M34 408V170a136 136 0 0 1 272 0v238Z" fill="#fff6ea" stroke="#d49a35" stroke-width="6"/>
+                        <path d="M34 408V170a136 136 0 0 1 272 0v238Z" fill="none" stroke="#b22e1f" stroke-width="2" stroke-dasharray="2 9" opacity="0.5"/>
+
+                        <!-- Awning valance over the arch -->
+                        <g>
+                            <rect x="27" y="14" width="286" height="26" rx="6" fill="#d2382a"/>
+                            <path d="M62 14v26M98 14v26M134 14v26M170 14v26M206 14v26M242 14v26M278 14v26" stroke="#fbe6cf" stroke-width="13" opacity="0.92"/>
+                            <rect x="27" y="14" width="286" height="26" rx="6" fill="none" stroke="#b22e1f" stroke-width="2"/>
+                            <path d="M27 40a13 13 0 0 0 26 0a13 13 0 0 0 26 0a13 13 0 0 0 26 0a13 13 0 0 0 26 0a13 13 0 0 0 26 0a13 13 0 0 0 26 0a13 13 0 0 0 26 0a13 13 0 0 0 26 0a13 13 0 0 0 26 0a13 13 0 0 0 26 0a13 13 0 0 0 26 0" fill="none" stroke="#b22e1f" stroke-width="2.5"/>
+                            <rect x="16" y="8" width="308" height="8" rx="4" fill="#a9781f"/>
+                        </g>
+
+                        <!-- Arched gold lettering -->
+                        <path id="archTextPath" d="M64 196a106 106 0 0 1 212 0" fill="none"/>
+                        <text class="arch-text"><textPath href="#archTextPath" startOffset="50%" text-anchor="middle">PASTA FRESCA</textPath></text>
+                        <path d="M148 216h44" stroke="#d49a35" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M170 216l4 4 -4 4 -4 -4z" fill="#d49a35" transform="translate(0,-4)"/>
+
+                        <!-- Steam -->
+                        <g stroke="#d9c4a4" stroke-width="4" stroke-linecap="round" fill="none">
+                            <path class="steam" d="M146 252c-5-8 5-12 0-20"/>
+                            <path class="steam s2" d="M170 246c-5-9 5-13 0-22"/>
+                            <path class="steam s3" d="M194 252c-5-8 5-12 0-20"/>
+                        </g>
+
+                        <!-- Fork lifting a twirl -->
+                        <g transform="rotate(14 236 250)">
+                            <path d="M236 214v34" stroke="#a9781f" stroke-width="5" stroke-linecap="round"/>
+                            <path d="M229 256v8M236 256v10M243 256v8" stroke="#a9781f" stroke-width="3.4" stroke-linecap="round"/>
+                            <ellipse cx="236" cy="256" rx="13" ry="7" fill="none" stroke="#d49a35" stroke-width="4"/>
+                            <ellipse cx="236" cy="258" rx="8" ry="4.4" fill="none" stroke="#c98a24" stroke-width="3"/>
+                        </g>
+                        <path d="M228 268c-8 14-26 22-44 26M246 270c0 14-10 24-22 30" stroke="#d49a35" stroke-width="3.6" fill="none" stroke-linecap="round"/>
+
+                        <!-- Bowl of pasta -->
+                        <ellipse cx="170" cy="330" rx="100" ry="20" fill="#eddcc0"/>
+                        <circle cx="170" cy="296" r="84" fill="#fffaef" stroke="#e7d6ba" stroke-width="3"/>
+                        <circle cx="170" cy="296" r="60" fill="#f6e7cb"/>
+                        <path d="M124 298c14-26 78-26 92 0M130 284c16-20 64-20 80 1M132 310c18 16 58 16 76-1" stroke="#d49a35" stroke-width="5" fill="none" stroke-linecap="round"/>
+                        <path d="M138 292c20-8 46-8 64 2M144 304c18-6 36-6 52 0" stroke="#c98a24" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.8"/>
+
+                        <!-- Tomato and basil -->
+                        <circle cx="206" cy="312" r="15" fill="#d2382a"/>
+                        <path d="M206 299c2-6-2-9-2-9s6 1 6 7" fill="#3a6b4a"/>
+                        <path d="M130 316c-8-2-12 3-12 3s7 6 12 1" fill="#3a6b4a"/>
+                        <path d="M118 308c-6-4-12-1-12-1s4 7 11 4" fill="#3a6b4a" opacity="0.85"/>
+
+                        <!-- Window sill -->
+                        <rect x="34" y="404" width="272" height="6" fill="#d49a35"/>
                     </svg>
                     <div class="hero-stamp" aria-hidden="true">
                         <div class="stamp"><div><div class="sml">Est.</div><div class="scr">1935</div></div></div>
@@ -647,6 +813,10 @@
 
         <!-- MENU BOARD -->
         <section class="section menuboard" id="food">
+            <span class="corner tl" aria-hidden="true"><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20V8a6 6 0 0 1 6-6h12"/><circle cx="2" cy="20" r="1.6" fill="currentColor" stroke="none"/></svg></span>
+            <span class="corner tr" aria-hidden="true"><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20V8a6 6 0 0 1 6-6h12"/><circle cx="2" cy="20" r="1.6" fill="currentColor" stroke="none"/></svg></span>
+            <span class="corner br" aria-hidden="true"><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20V8a6 6 0 0 1 6-6h12"/><circle cx="2" cy="20" r="1.6" fill="currentColor" stroke="none"/></svg></span>
+            <span class="corner bl" aria-hidden="true"><svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20V8a6 6 0 0 1 6-6h12"/><circle cx="2" cy="20" r="1.6" fill="currentColor" stroke="none"/></svg></span>
             <div class="wrap">
                 <div class="section-head reveal" style="margin-bottom:6px">
                     <span class="eyebrow">From our kitchen</span>
@@ -722,7 +892,7 @@
         <section class="section" id="story">
             <div class="wrap story-grid">
                 <div class="story-visual reveal">
-                    <div class="story-frame" role="img" aria-label="A warm trattoria place setting">
+                    <div class="story-frame" role="img" aria-label="A warm trattoria place setting under a small Italian ribbon">
                         <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2"><circle cx="32" cy="32" r="25"/><circle cx="32" cy="32" r="15"/><path d="M13 9v12M10 9v6M16 9v6M51 9c-3 0-4 3-4 7s1 5 4 5"/></svg>
                     </div>
                     <div class="stamp" aria-hidden="true"><div><div class="sml">Since</div><div class="scr">1935</div></div></div>
@@ -796,47 +966,51 @@
                     <p>Choose your restaurant and we will get you seated. Booking takes less than a minute, and walk ins are always welcome.</p>
                 </div>
 
-                <form class="book-form reveal" id="bookForm" style="transition-delay:.08s">
-                    <div class="field">
-                        <label for="bk-loc">Restaurant</label>
-                        <select id="bk-loc" name="restaurant" required>
-                            <option value="" selected disabled>Choose a restaurant</option>
-                            <option>London, Goodge Street</option>
-                            <option>London, Covent Garden</option>
-                            <option>London, Spitalfields</option>
-                            <option>Manchester</option>
-                            <option>Leeds</option>
-                            <option>Birmingham</option>
-                            <option>Bristol</option>
-                            <option>Edinburgh</option>
-                            <option>Brighton</option>
-                            <option>Cambridge</option>
-                        </select>
+                <form class="ticket reveal" id="bookForm" style="transition-delay:.08s">
+                    <div class="ticket-stripe" aria-hidden="true"></div>
+                    <p class="ticket-script">Riserva il tuo tavolo</p>
+                    <div class="ticket-grid">
+                        <div class="field">
+                            <label for="bk-loc">Restaurant</label>
+                            <select id="bk-loc" name="restaurant" required>
+                                <option value="" selected disabled>Choose a restaurant</option>
+                                <option>London, Goodge Street</option>
+                                <option>London, Covent Garden</option>
+                                <option>London, Spitalfields</option>
+                                <option>Manchester</option>
+                                <option>Leeds</option>
+                                <option>Birmingham</option>
+                                <option>Bristol</option>
+                                <option>Edinburgh</option>
+                                <option>Brighton</option>
+                                <option>Cambridge</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="bk-date">Date</label>
+                            <input type="date" id="bk-date" name="date" required>
+                        </div>
+                        <div class="field">
+                            <label for="bk-time">Time</label>
+                            <select id="bk-time" name="time" required>
+                                <option value="" selected disabled>Select</option>
+                                <option>12:00</option><option>12:30</option><option>13:00</option><option>13:30</option>
+                                <option>18:00</option><option>18:30</option><option>19:00</option><option>19:30</option><option>20:00</option><option>20:30</option>
+                            </select>
+                        </div>
+                        <div class="field field-guests">
+                            <label for="bk-guests">Guests</label>
+                            <select id="bk-guests" name="guests" required>
+                                <option value="" selected disabled>Party size</option>
+                                <option>1 guest</option><option>2 guests</option><option>3 guests</option><option>4 guests</option>
+                                <option>5 guests</option><option>6 guests</option><option>7 or more</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                            Find a table
+                        </button>
                     </div>
-                    <div class="field">
-                        <label for="bk-date">Date</label>
-                        <input type="date" id="bk-date" name="date" required>
-                    </div>
-                    <div class="field">
-                        <label for="bk-time">Time</label>
-                        <select id="bk-time" name="time" required>
-                            <option value="" selected disabled>Select</option>
-                            <option>12:00</option><option>12:30</option><option>13:00</option><option>13:30</option>
-                            <option>18:00</option><option>18:30</option><option>19:00</option><option>19:30</option><option>20:00</option><option>20:30</option>
-                        </select>
-                    </div>
-                    <div class="field field-guests">
-                        <label for="bk-guests">Guests</label>
-                        <select id="bk-guests" name="guests" required>
-                            <option value="" selected disabled>Party size</option>
-                            <option>1 guest</option><option>2 guests</option><option>3 guests</option><option>4 guests</option>
-                            <option>5 guests</option><option>6 guests</option><option>7 or more</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn btn-cream">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                        Find a table
-                    </button>
                 </form>
                 <p class="book-note">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
@@ -853,7 +1027,7 @@
                 <h2>A little Italy in your inbox</h2>
                 <p>Be first to hear about new dishes, seasonal menus, cooking classes and offers at your local Ottima Pasta.</p>
                 <form class="news-form" id="newsForm">
-                    <label for="news-email" class="skip">Email address</label>
+                    <label for="news-email" class="sr-only">Email address</label>
                     <input type="email" id="news-email" name="email" placeholder="Your email address" required>
                     <button type="submit" class="btn btn-ink">Sign me up</button>
                 </form>
@@ -871,7 +1045,7 @@
                     <p>From London to Edinburgh, there is an Ottima Pasta table near you. Pop in for a quick lunch or settle in for the evening.</p>
                 </div>
                 <div class="loc-grid">
-                    <a href="locations.html" class="loc reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>London, Goodge Street <span class="flag">Flagship</span></a>
+                    <a href="locations.html" class="loc flagship reveal"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2.5l2.6 6.2 6.7.5-5.1 4.4 1.6 6.5-5.8-3.5-5.8 3.5 1.6-6.5-5.1-4.4 6.7-.5z"/></svg>London, Goodge Street <span class="flag">Flagship</span></a>
                     <a href="locations.html" class="loc reveal" style="transition-delay:.04s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>London, Covent Garden</a>
                     <a href="locations.html" class="loc reveal" style="transition-delay:.08s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>London, Spitalfields</a>
                     <a href="locations.html" class="loc reveal" style="transition-delay:.04s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Manchester</a>
@@ -899,24 +1073,24 @@
                 </div>
                 <div class="faq-list">
                     <div class="faq-item reveal">
-                        <button class="faq-q" aria-expanded="false"><span>Do I need to book a table?</span><span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
-                        <div class="faq-a"><p>Walk ins are always welcome. Booking ahead simply means we will have your table ready, which we recommend at weekends and for larger groups.</p></div>
+                        <button class="faq-q" aria-expanded="false" aria-controls="faqa1"><span>Do I need to book a table?</span><span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+                        <div class="faq-a" id="faqa1"><p>Walk ins are always welcome. Booking ahead simply means we will have your table ready, which we recommend at weekends and for larger groups.</p></div>
                     </div>
                     <div class="faq-item reveal">
-                        <button class="faq-q" aria-expanded="false"><span>Can you cater for allergies and dietary needs?</span><span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
-                        <div class="faq-a"><p>Yes. We have vegetarian, vegan and gluten free options on every menu, and our teams are happy to talk you through allergens before you order.</p></div>
+                        <button class="faq-q" aria-expanded="false" aria-controls="faqa2"><span>Can you cater for allergies and dietary needs?</span><span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+                        <div class="faq-a" id="faqa2"><p>Yes. We have vegetarian, vegan and gluten free options on every menu, and our teams are happy to talk you through allergens before you order.</p></div>
                     </div>
                     <div class="faq-item reveal">
-                        <button class="faq-q" aria-expanded="false"><span>Can I book for a large group or private dining?</span><span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
-                        <div class="faq-a"><p>Absolutely. We host group bookings and private dining across our restaurants, with our Goodge Street site especially suited to larger parties and set menus.</p></div>
+                        <button class="faq-q" aria-expanded="false" aria-controls="faqa3"><span>Can I book for a large group or private dining?</span><span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+                        <div class="faq-a" id="faqa3"><p>Absolutely. We host group bookings and private dining across our restaurants, with our Goodge Street site especially suited to larger parties and set menus.</p></div>
                     </div>
                     <div class="faq-item reveal">
-                        <button class="faq-q" aria-expanded="false"><span>Do you offer takeaway and collection?</span><span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
-                        <div class="faq-a"><p>Many of our restaurants offer takeaway and collection, so you can enjoy your Ottima Pasta favourites at home.</p></div>
+                        <button class="faq-q" aria-expanded="false" aria-controls="faqa4"><span>Do you offer takeaway and collection?</span><span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+                        <div class="faq-a" id="faqa4"><p>Many of our restaurants offer takeaway and collection, so you can enjoy your Ottima Pasta favourites at home.</p></div>
                     </div>
                     <div class="faq-item reveal">
-                        <button class="faq-q" aria-expanded="false"><span>Are your restaurants family friendly?</span><span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
-                        <div class="faq-a"><p>Always. Little ones are part of the family, with a children's menu, high chairs and a warm welcome at every table.</p></div>
+                        <button class="faq-q" aria-expanded="false" aria-controls="faqa5"><span>Are your restaurants family friendly?</span><span class="pm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+                        <div class="faq-a" id="faqa5"><p>Always. Little ones are part of the family, with a children's menu, high chairs and a warm welcome at every table.</p></div>
                     </div>
                 </div>
             </div>
@@ -930,7 +1104,13 @@
             <div class="footer-top">
                 <div class="footer-brand">
                     <span class="logo">
-                        <svg class="crest" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"/><path d="M20 9l2.6 6.6L29 16l-5 4.3 1.6 6.7L20 23.6 14.4 27 16 20.3 11 16l6.4-.4z" fill="currentColor"/></svg>
+                        <svg class="crest" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+                            <circle cx="20" cy="20" r="18.6" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="20" cy="20" r="15.4" stroke="currentColor" stroke-width="0.9" opacity="0.45"/>
+                            <path d="M20 31.5V23.5" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                            <path d="M15.4 8.8v4.6a4.6 4.6 0 0 0 9.2 0V8.8M20 8.4v6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+                            <path d="M11.8 19.4c0-3.3 16.4-3.3 16.4 0M13.7 22.7c0-2.6 12.6-2.6 12.6 0" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/>
+                        </svg>
                         <span class="wordmark">Ottima <b>Pasta</b></span>
                     </span>
                     <p>An all day Italian kitchen, family owned since 1935. Handmade pasta and a warm welcome at ten restaurants across the UK.</p>
@@ -981,7 +1161,7 @@
         </div>
     </footer>
 
-    <!-- Newsletter pop-up -->
+    <!-- Newsletter pop up -->
     <div class="modal" id="popup" role="dialog" aria-modal="true" aria-labelledby="popupTitle" aria-hidden="true">
         <div class="modal-card">
             <button class="modal-close" id="popupClose" aria-label="Close">
@@ -992,7 +1172,7 @@
             <h2 id="popupTitle">Get a little Italy in your inbox</h2>
             <p>Sign up for new dishes, seasonal menus and offers at your local Ottima Pasta. We will even let you know when cooking classes go live.</p>
             <form class="news-form" id="popForm">
-                <label for="pop-email" class="skip">Email address</label>
+                <label for="pop-email" class="sr-only">Email address</label>
                 <input type="email" id="pop-email" name="email" placeholder="Your email address" required>
                 <button type="submit" class="btn btn-primary">Sign me up</button>
             </form>
@@ -1013,7 +1193,7 @@
                 <p>Pick a restaurant, date and time and we will hold your table.</p>
             </div>
             <p>In the live site this opens the <strong>Collins</strong> booking widget to confirm your table in real time. For now, this is a preview of the booking step.</p>
-            <a href="#" class="btn btn-primary btn-block" id="bookConfirm">Continue to Collins</a>
+            <button type="button" class="btn btn-primary btn-block" id="bookConfirm">Continue to Collins</button>
             <p class="modal-fine">Booking for seven or more guests? Our <a href="group-bookings.html">group bookings team</a> will look after you.</p>
         </div>
     </div>
@@ -1028,7 +1208,7 @@
     </div>
 
     <script>
-        // ---------- cookie helpers ----------
+        // ===== cookie helpers =====
         function setCookie(name, value, days) {
             var d = new Date();
             d.setTime(d.getTime() + days * 86400000);
@@ -1041,7 +1221,7 @@
             }, '');
         }
 
-        // ---------- announcement bar ----------
+        // ===== announcement bar =====
         var topbar = document.getElementById('topbar');
         if (getCookie('ottimaAnnHidden') === '1') { topbar.classList.add('closed'); }
         document.getElementById('topbarClose').addEventListener('click', function () {
@@ -1049,13 +1229,13 @@
             setCookie('ottimaAnnHidden', '1', 7);
         });
 
-        // ---------- header shadow on scroll ----------
+        // ===== header shadow on scroll =====
         var header = document.getElementById('siteHeader');
         function onScroll() { header.classList.toggle('scrolled', window.scrollY > 8); }
         onScroll();
         window.addEventListener('scroll', onScroll, { passive: true });
 
-        // ---------- mobile drawer ----------
+        // ===== mobile drawer =====
         var drawer = document.getElementById('drawer');
         var overlay = document.getElementById('overlay');
         var hamburger = document.getElementById('hamburger');
@@ -1067,6 +1247,7 @@
             hamburger.setAttribute('aria-expanded', 'true');
             drawer.setAttribute('aria-hidden', 'false');
             document.body.style.overflow = 'hidden';
+            document.getElementById('drawerClose').focus();
         }
         function closeDrawer() {
             drawer.classList.remove('open');
@@ -1074,21 +1255,26 @@
             hamburger.setAttribute('aria-expanded', 'false');
             drawer.setAttribute('aria-hidden', 'true');
             if (!anyModalOpen()) { overlay.classList.remove('show'); document.body.style.overflow = ''; }
+            hamburger.focus();
         }
         hamburger.addEventListener('click', openDrawer);
         document.getElementById('drawerClose').addEventListener('click', closeDrawer);
         drawer.querySelectorAll('nav a').forEach(function (a) { a.addEventListener('click', closeDrawer); });
 
-        // ---------- modals ----------
+        // ===== modals =====
         var popup = document.getElementById('popup');
         var bookModal = document.getElementById('bookModal');
+        var lastFocus = null;
         function anyModalOpen() { return popup.classList.contains('open') || bookModal.classList.contains('open'); }
 
         function openModal(m) {
+            lastFocus = document.activeElement;
             m.classList.add('open');
             m.setAttribute('aria-hidden', 'false');
             overlay.classList.add('show');
             document.body.style.overflow = 'hidden';
+            var closeBtn = m.querySelector('.modal-close');
+            if (closeBtn) { closeBtn.focus(); }
         }
         function closeModal(m) {
             m.classList.remove('open');
@@ -1097,6 +1283,7 @@
                 overlay.classList.remove('show');
                 document.body.style.overflow = '';
             }
+            if (lastFocus && typeof lastFocus.focus === 'function') { lastFocus.focus(); }
         }
 
         // booking triggers
@@ -1123,7 +1310,7 @@
             }
         });
 
-        // ---------- booking form ----------
+        // ===== booking form =====
         function buildSummary() {
             var loc = document.getElementById('bk-loc').value;
             var date = document.getElementById('bk-date').value;
@@ -1143,9 +1330,16 @@
             buildSummary();
             openModal(bookModal);
         });
-        document.getElementById('bookConfirm').addEventListener('click', function (e) { e.preventDefault(); });
 
-        // ---------- newsletter forms ----------
+        // Honest feedback on the preview button
+        var bookConfirm = document.getElementById('bookConfirm');
+        bookConfirm.addEventListener('click', function () {
+            var original = bookConfirm.textContent;
+            bookConfirm.textContent = 'Collins opens here on the live site';
+            setTimeout(function () { bookConfirm.textContent = original; }, 1800);
+        });
+
+        // ===== newsletter forms =====
         function handleNews(formId, okId, closeAfter) {
             document.getElementById(formId).addEventListener('submit', function (e) {
                 e.preventDefault();
@@ -1157,14 +1351,14 @@
         handleNews('newsForm', 'newsOk', false);
         handleNews('popForm', 'popOk', true);
 
-        // ---------- timed pop-up ----------
+        // ===== timed pop up =====
         if (getCookie('ottimaPopupSeen') !== '1') {
             setTimeout(function () {
                 if (!anyModalOpen() && !drawer.classList.contains('open')) openModal(popup);
             }, 7000);
         }
 
-        // ---------- FAQ accordion ----------
+        // ===== FAQ accordion =====
         document.querySelectorAll('.faq-item').forEach(function (item) {
             var q = item.querySelector('.faq-q');
             var a = item.querySelector('.faq-a');
@@ -1175,13 +1369,13 @@
             });
         });
 
-        // ---------- cookie notice ----------
+        // ===== cookie notice =====
         var cookie = document.getElementById('cookie');
         if (!getCookie('ottimaConsent')) { setTimeout(function () { cookie.classList.add('show'); }, 900); }
         document.getElementById('cookieAccept').addEventListener('click', function () { setCookie('ottimaConsent', 'accepted', 365); cookie.classList.remove('show'); });
         document.getElementById('cookieReject').addEventListener('click', function () { setCookie('ottimaConsent', 'rejected', 365); cookie.classList.remove('show'); });
 
-        // ---------- reveal on scroll ----------
+        // ===== reveal on scroll =====
         var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         if (reduce) {
             document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
@@ -1194,7 +1388,7 @@
             document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
         }
 
-        // set a sensible min date on the booking date field
+        // set a sensible earliest date on the booking date field
         (function () {
             var d = new Date();
             var iso = d.toISOString().split('T')[0];
